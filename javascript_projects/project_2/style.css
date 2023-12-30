@@ -1,0 +1,65 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+html,body{
+height:100%;
+width:100%;
+color:aliceblue
+}
+
+form{
+    display: flex;
+    padding-top: 10vw;
+    justify-content: center;
+}
+#bmi{ background: #000;
+    height:30vw;
+    color: aliceblue;
+    width: 30vw;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+
+}
+#inputs{
+    width: 100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}  
+.label{
+    text-align: center;
+    display: block;
+    background: #5f5b5b;
+    height: 20px;
+    width: 200px;
+}
+.input{
+    text-align: center;
+    display: block;
+    background: #5f5b5b;
+    height: 20px;
+    width: 160px;
+}
+
+#result{
+    width: 100%;
+    height:50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+ #result span{
+    color: aliceblue;
+}
+#bmi_value{
+    margin-top: 10px;
+    background: green;
+    height: 20px;
+    /* width: 160px; */
+}

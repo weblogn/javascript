@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color_changer</title>
+</head>
+<body>
+    <h1>Random background colour generator</h1>
+
+    <button style="color:red" id="start">Start</button>
+
+    <button  style="color:green" id="end">End</button>
+    
+</body>
+<script>
+    let color;
+    const random_color=function(){
+        const hx="1234567890ABCDEF"
+        color="#";
+        for(let i=0;i<6;i++){
+            color+=hx[Math.floor(Math.random()*16)];
+        }
+        return color;
+    }
+    var start_button=document.querySelector("#start")
+    var stop_button=document.querySelector("#end")
+
+    let interval;
+    function timer(){
+        start_button.addEventListener('click',()=>{
+            if(!interval){
+             interval=setInterval(()=>{
+                document.body.style.backgroundColor=random_color();
+                console.log(random_color())
+            },1000)}
+
+        })
+    }
+    function stopper(){
+
+        clearInterval(interval)
+        document.body.style.backgroundColor="#ffffff";
+        interval=null
+    }
+
+    start_button.addEventListener('click',timer);
+    stop_button.addEventListener('click',stopper  );
+</script>
+</html>

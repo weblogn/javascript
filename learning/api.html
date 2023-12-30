@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 >API</h1>
+    \
+    <div id="firstname"></div>
+    <div id="lastname"></div>
+    <div id="city"></div>
+</body>
+<script>
+    const reques_url="https://randomuser.me/api/"
+     let request =new XMLHttpRequest();
+     console.log("step1")
+     request.open('GET',reques_url);
+     console.log("step2")
+     console.log(request.readyState)
+     
+     var firstname=document.querySelector("#firstname")
+     var lastname=document.querySelector("#lastname")
+     var city_name=document.querySelector("#city")
+    // asynchronous javascript part
+     request.onreadystatechange =()=>{
+        console.log(request.readyState)
+        if(request.readyState===4){
+        console.log("final step")
+        const data=JSON.parse(request.responseText)
+        console.log(request.readyState)
+        const first_name=data.results[0].name.first
+        const last_name=data.results[0].name.last
+        const city=data.results[0].location.city 
+        firstname.innerHTML=`${first_name}`
+        lastname.innerHTML=`${last_name}`
+        city_name.innerHTML=`${first_name}`
+        
+     }
+    }
+     request.send();
+   
+    
+     
+     
+     console.log("step3")
+</script>
+</html>

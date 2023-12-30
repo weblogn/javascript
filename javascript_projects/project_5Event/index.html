@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="images">
+        <li><img  height="200" id="mountain" src="https://images.pexels.com/photos/18771875/pexels-photo-18771875/free-photo-of-motor-yachts-moored-in-bay-in-town-on-amalfi-coast.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+        <li><img  height="200" id="ocean" src="https://images.pexels.com/photos/19516318/pexels-photo-19516318/free-photo-of-a-small-boat-is-traveling-through-the-ocean.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+        <li><img  height="200" id="bird" src="https://images.pexels.com/photos/19572404/pexels-photo-19572404/free-photo-of-bird-summer-beak-feathers.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt=""></li>
+        <li><img  height="200" id="lady" src="https://images.pexels.com/photos/7791844/pexels-photo-7791844.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+    </ul>
+    
+</body>
+<script>
+     document.querySelector("#images").addEventListener('click',(e)=>{
+        console.log(e.target.tagName)
+        if(e.target.tagName ==='IMG'){
+        e.target.parentNode.remove()
+        }
+     },false)
+
+</script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #card{
+            position: relative;
+            height: 400px;
+            width: 600px;
+            border-radius: 10%;
+            background: blanchedalmond;
+            top:200px;
+            left:610px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        #name{
+            padding: 20px;
+            font-size: 40px;
+            
+        }
+        #img{
+            padding: 20px;
+            width: 300px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+        #userimage{
+            position: absolute;
+            max-width: 100%; /* Set the maximum width to 100% of the container */
+            max-height: 100%; /* Set the maximum height to 100% of the container */
+            object-fit: cover;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+    <div id="img">
+        <img id="userimage" src="API_IMAGE_URL"alt="API Image">
+    </div>
+    <div id="name">
+            <div id="firstname">First name </div>
+            <div id="city">Country</div>
+    </div>
+    </div>
+</body>
+
+<script>
+    const request_url="https://api.github.com/users/hiteshchoudhary"
+    const request =new XMLHttpRequest();
+    request.open('GET',request_url)
+    
+    var firstname=document.querySelector("#firstname")
+    var img=document.querySelector("#img")
+     var cityname=document.querySelector("#city")
+     request.onreadystatechange=()=>{
+        if(request.readyState===4){
+        const data=JSON.parse(request.responseText)
+        const first_name=data.name
+        const city=data.location
+        const imgurl=data.avatar_url
+        firstname.innerHTML=`${first_name}`;
+        cityname.innerHTML=`${city}`;
+        img.innerHTML=`<img src="${imgurl}" alt="API Image">`;
+        }
+     }
+   
+
+     request.send();
+</script>
+</html>

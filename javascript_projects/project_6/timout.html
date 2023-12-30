@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Hare Krishna</h1>
+    <button id="start">Start</button>
+    <div id="time"></div>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    const text=document.querySelector('h1')
+    const time_taken=document.querySelector('#time')
+    const start_button=document.querySelector("#start")
+    const stop_button=document.querySelector("#stop")
+    
+    let interval;
+    let date= new Date()
+    let start_time,stop_time
+    function timer(){
+        start_button.addEventListener('click',()=>{
+            start_time=Date.now()
+             interval=setInterval(()=>{
+                console.log("hii")
+            },1000)
+        })
+    }
+    
+    function stopper(){
+        stop_time=Date.now()
+        clearInterval(interval)
+        console.log("stopped")
+        time_taken.innerHTML=Math.floor(((stop_time-start_time)/1000));
+        start_time=null,stop_time=null;
+    }
+    start_button.addEventListener('click',timer);
+    stop_button.addEventListener('click',stopper);
+    
+    // {
+    //         // const time_stop=date.now()
+    //         clearInterval(interval)
+    //         //  console.log(time_start-time_stop)
+    //         // time_taken.innerHTML=time_start-time_stop
+    //     }
+
+</script>
+</html>
