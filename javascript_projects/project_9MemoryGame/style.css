@@ -1,0 +1,85 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+html,body{
+height:100%;
+width:100%;
+
+}
+
+#highscore{
+    height: 50px;
+    width: 50px;
+    background: #ffffff;
+    color: black;
+}
+#gamecontainer{
+    height: 100vh;;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #90979b;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto ;
+    /* flex-direction: column; */
+    /* display: grid; */
+    position: relative;
+    padding: 10px;
+    height: 57vh;
+    width: 57vh;
+    border-radius: 5px;
+    background: #575151;
+}
+
+.box{
+    border: 2px solid black;
+    border-radius: 4px;
+    position: relative;
+    color:red;
+    display: flex;
+    margin: 0.5vh;
+    height:10vh;
+    width:10vh;
+    background: rgba(0, 0, 0, 0.245);
+    transform-style: preserve-3d;
+    transition: transform 0.7s linear;
+}
+
+.actualimg,.coverimg{
+    position: absolute;
+    height:100%;
+    width:100%;
+    padding: 8px;
+    backface-visibility: hidden;
+}
+
+.actualimg{
+    transform: rotateY(180deg);
+    /* transform:rotateY(180deg) */
+
+}
+
+.coverimg{
+    z-index: 2;
+}
+
+.flip{
+    /* transform: scaleX(-1); */
+    
+        transform: rotateY(180deg);
+        /* transform:rotateY(180deg) */
+    
+    
+    
+}
+
+
+
+
+
